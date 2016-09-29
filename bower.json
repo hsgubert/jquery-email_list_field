@@ -1,0 +1,31 @@
+{
+  "name": "jquery-email_list_field",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Henrique Gubert",
+      "url": "https://github.com/hsgubert"
+    }
+  ],
+  "description": "Creates editable form field for email lists using jquery and jquery-ui.",
+  "main": "src/email_list_field.js",
+  "keywords": [
+    "email",
+    "forms",
+    "jquery",
+    "fields"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/hsgubert/jquery-email_list_field",
+  "dependencies": {
+    "jquery": "~1.12",
+    "jqueryui": "~1.11"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
