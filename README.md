@@ -9,7 +9,6 @@ Bower:
 
     bower install jquery-email_list_field --save
 
-
 ## How it works
 
 ### Basic Functionality
@@ -95,9 +94,21 @@ $('#some-empty-div').emailListField(options={});
 
 The available options are:
 
-| Option        | Expected value | Default | Description  |
+| Option        | Type/Format    | Default | Description  |
 | ------------- | -------------- | ------- | ------------ |
-|  knownFormattedEmails | Array[String] | [] | List of known emails for autocomplete purposes. Emails can be provided as is or in the "Name Lastname <email>" format |
+| knownFormattedEmails | Array[String] | [] | List of known emails for autocomplete purposes. Emails can be provided as is or in the "Name Lastname <email>" format |
+| initialEmails | Array[String] | [] | List of emails that are initialized in the field. Emails can be provided as is or in the "Name Lastname <email>" format |
+| inputName | String | 'emails[]' | Name of the input fields. One hidden input is generated for each email in list |
+| lowerEmailAddressCase | Boolean | true | If true email addresses will be downcased when added. This does not affect name when email is added in the "Name <email>" format |
+| allowDuplicateEmails | Boolean | false | If false emails already in list will not be added |
+| duplicatedEmailMessage | String | 'is already on this email list' | If defined, a message tooltip appears when user tries to add duplicate emails. The message is in the format "%{email} %{duplicatedEmailMessage}" |
+| invalidEmailMessage | String | 'is not a valid email address' | If defined, a message tooltip appears when user tries to add invalid emails. The message is in the format "%{email} %{duplicatedEmailMessage}" |
+| placeholderMessage | String | 'Insert email list here' | The message shown as placeholder in the field when there are no emails |
+| extraTagClassFunction | function returning String | function(text, email) {} | Function that receives both the complete tag text and only the email and optionally returns a string with css classes to be added to the specific tag. If the option lowerEmailAddressCase is set, the function will receive the email already downcased. |
+| afterChangeCallback | function | function(formatted_emails) {} | Function called after each adition or removal of email. It is passed an array of emails (strings) exactly as shown to the user. This callback is designed to do actions that depend on the current state os the email list field. |
+
+For a better undestanding of the options, see examples on the `examples/` directory.
+
 
 ## License
 
