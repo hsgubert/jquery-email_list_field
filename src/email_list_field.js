@@ -83,15 +83,6 @@ var EmailListField = function() {
     placeholderMessage: 'Insert email list here',
 
     /**
-     * If defined, a message is appended after the email list field when there
-     * is at least one unknown email in list. The message is a <span> with class
-     * 'taggle-unknown-emails-message'. It works only if highlightUnknownEmails
-     * is true
-     * @type {String}
-     */
-    unknownEmailMessage: 'The highlighted emails are not known',
-
-    /**
      * Function that receives both the complete tag text and only the email and
      * optionally returns a string with css classes to be added to the specific
      * tag. If the option lowerEmailAddressCase is set, the function will receive
@@ -104,7 +95,7 @@ var EmailListField = function() {
      * Function called after each adition or removal of email. It is passed an
      * array of emails (strings) exactly as shown to the user. This callback is
      * designed to do actions that depend on the current state os the email list field
-     * @type {function returning String}
+     * @type {function}
      */
     afterChangeCallback: function(formatted_emails) {}
   };
