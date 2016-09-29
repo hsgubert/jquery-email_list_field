@@ -1,0 +1,63 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Loading dependencies CSS -->
+        <link rel="stylesheet" href="../../bower_components/jqueryui/themes/base/all.css">
+        <link rel="stylesheet" href="../../bower_components/jqueryui/themes/base/all.css">
+
+        <!-- Loading dependencies JS -->
+        <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../../bower_components/jqueryui/jquery-ui.min.js"></script>
+        <script src="../../bower_components/taggle/src/taggle.js"></script>
+
+        <!-- Loading emailListField -->
+        <script src="../../src/email_list_field.js"></script>
+        <link rel="stylesheet" href="../../src/stylesheets/email_list_field.css">
+
+        <!-- Styles for the example -->
+        <style>
+          * {
+            font-size: 16px;
+            font-family: sans-serif;
+          }
+
+          #mailing_list_container {
+            max-width: 600px;
+          }
+
+          div.taggle ul.taggle_list>li.blue {
+            background: #ccd4ff;
+          }
+
+          div.taggle ul.taggle_list>li.red {
+            background: #ffd4cc;
+          }
+
+          div.taggle ul.taggle_list>li.green {
+            background: #ccffd4;
+          }
+        </style>
+    </head>
+    <body>
+      <p>Write an email list below:</p>
+      <div id="mailing_list_container"></div>
+
+      <script>
+        $('#mailing_list_container').emailListField({
+          extraTagClassFunction: function(text, email) {
+            if (email.includes('blue'))
+              return 'blue';
+            else if (email.includes('red'))
+              return 'red';
+            else if (email.includes('green'))
+              return 'green';
+          },
+        });
+      </script>
+    </body>
+</html>

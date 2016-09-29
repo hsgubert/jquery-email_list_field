@@ -299,6 +299,9 @@ var EmailListField = function() {
     // creates scoped variable so we can acccess emailListField inside the taggle callbacks
     var emailListField = this;
 
+    // adds taggle class to container
+    $('#' + this.containerId).addClass('taggle');
+
     this.taggleObject = new Taggle(this.containerId, {
       delimeter: new RegExp('[,;]'),    // splits emails on commas and semicolons (passing regexps here is not documented on taggle, but works)
       submitKeys: [44, 9, 13, 27, 186], // keycodes: 9 (tab), 13 (enter), 27 (esc), 35 (end), 186 (semicolon). Ons: cannot use 188 (comma) because it is also de key of '<', which is a necessary character for emails with name
@@ -311,7 +314,7 @@ var EmailListField = function() {
 
       // prepares input element to show tooltip (for validation or duplicate messages)
       inputFormatter: function(input) {
-        $(input).tooltip();
+        $(input).tooltip({position: {my:'left top', at: 'left bottom'}});
       },
 
       // prevents invalid or duplicated emails from being added to the list
