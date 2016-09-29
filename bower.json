@@ -19,7 +19,8 @@
   "homepage": "https://github.com/hsgubert/jquery-email_list_field",
   "dependencies": {
     "jquery": "~1.12",
-    "jqueryui": "~1.11"
+    "jqueryui": "~1.11",
+    "taggle": "^1.11.1"
   },
   "ignore": [
     "**/.*",
